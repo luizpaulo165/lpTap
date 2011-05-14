@@ -1,8 +1,8 @@
 $.fn.lpTab = function(){
 	var openButton = $('.open');
 	var closeButton = $('.close');
-	var wrapContent = $('div#wrap_content')
-	var tabRight = $('div#tip_right')
+	var wrapContent = $('#wrap_content')
+	var tabRight = $('#tip_right')
 	
 	
 	openButton.click(function(){
