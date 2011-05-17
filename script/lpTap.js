@@ -2,14 +2,16 @@ $.fn.lpTab = function(){
 	var openButton = $('.open');
 	var closeButton = $('.close');
 	var wrapContent = $('#wrap_lpTap');
-	var divFantasma = $('<section id="wrap_cont"></section>').appendTo(wrapContent);
-	var contentDiv = wrapContent.html();
+	var wrapRight = $("<section id='tip_right'><a href='javascript:void(0)' class='close'>X</a></section>");
 	var tabRight = $('#tip_right');
-		
+	
 	openButton.click(function(){
+		wrapRight.live('click', function(){
+			$(this).after(wrapContent);
+		});		
+		wrapContent.after(wrapRight);
 		wrapContent.fadeIn('fast').animate({left:'0px'},800);	
-		tabRight.stop(true,true).delay(1000).fadeIn('fast').animate({right:'0px'},500);	
-		divFantasma.html(contentDiv);		
+		tabRight.stop(true,true).delay(1000).fadeIn('fast').animate({right:'0px'},500);			
 	});
 	closeButton.click(function(){
 		//$(this).fadeOut('fast');
